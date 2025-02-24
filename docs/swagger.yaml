@@ -1,0 +1,69 @@
+basePath: /
+definitions:
+  models.CurrencySwagger:
+    properties:
+      base_code:
+        example: BRL
+        type: string
+      conversion_result:
+        example: 250
+        type: number
+      target_code:
+        example: EUR
+        type: string
+    required:
+    - base_code
+    - conversion_result
+    - target_code
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is an API for currency conversion with historical records.
+  title: Currency Conversion API
+  version: "1.0"
+paths:
+  /convert:
+    post:
+      consumes:
+      - application/json
+      description: Converts a value from a base currency to a target currency using
+        the current exchange rate
+      parameters:
+      - description: Currency conversion request example
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.CurrencySwagger'
+      produces:
+      - application/json
+      responses: {}
+      summary: Converts a value between currencies
+      tags:
+      - Currency
+  /history:
+    get:
+      description: Retrieves the complete history of stored currency conversions
+      produces:
+      - application/json
+      responses: {}
+      summary: Returns the conversion history
+      tags:
+      - Currency
+  /rates/{currency}:
+    get:
+      description: Returns the most recent exchange rate for the requested currency
+      parameters:
+      - description: Currency code (e.g., USD, EUR, BRL)
+        in: path
+        name: currency
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Retrieves the latest exchange rate for a specific currency
+      tags:
+      - Currency
+swagger: "2.0"

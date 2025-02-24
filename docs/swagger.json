@@ -1,0 +1,99 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is an API for currency conversion with historical records.",
+        "title": "Currency Conversion API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/convert": {
+            "post": {
+                "description": "Converts a value from a base currency to a target currency using the current exchange rate",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Currency"
+                ],
+                "summary": "Converts a value between currencies",
+                "parameters": [
+                    {
+                        "description": "Currency conversion request example",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CurrencySwagger"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/history": {
+            "get": {
+                "description": "Retrieves the complete history of stored currency conversions",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Currency"
+                ],
+                "summary": "Returns the conversion history",
+                "responses": {}
+            }
+        },
+        "/rates/{currency}": {
+            "get": {
+                "description": "Returns the most recent exchange rate for the requested currency",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Currency"
+                ],
+                "summary": "Retrieves the latest exchange rate for a specific currency",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Currency code (e.g., USD, EUR, BRL)",
+                        "name": "currency",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "models.CurrencySwagger": {
+            "type": "object",
+            "required": [
+                "base_code",
+                "conversion_result",
+                "target_code"
+            ],
+            "properties": {
+                "base_code": {
+                    "type": "string",
+                    "example": "BRL"
+                },
+                "conversion_result": {
+                    "type": "number",
+                    "example": 250
+                },
+                "target_code": {
+                    "type": "string",
+                    "example": "EUR"
+                }
+            }
+        }
+    }
+}

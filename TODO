@@ -1,0 +1,28 @@
+
+API Currency Steps:
+  ✔ Project structure ( cmd/ config/ controllers/ models/ routes/ services/ database/ main.go) @done(25-02-17 15:47)
+  ✔ Config database @done(25-02-17 16:12)
+  ✔ Routes/Endpoints @done(25-02-20 15:24)
+    ✔ `POST` /convert - responsible to convert the currency @done(25-02-18 18:29)
+        Request example
+        {
+          "from": "USD", 
+          "to": "EUR",
+          "amount" : "100"
+        }
+        Return Converted amount and Cambio Rate
+    ✔ `GET` /rates - List of cambio rate in real time @done(25-02-18 22:43)
+    ✔ `GET` /history - Consult the conversion history @done(25-02-19 21:04)
+      ✔ Bring the dateTime in the Json result @done(25-02-20 15:24)
+
+Extras:
+  ✔ Authetication via API Key @done(25-02-18 18:30)
+  ✔ Save API URL/KEY on a .ENV file @done(25-02-18 18:30)
+  ✔ Testing @done(25-02-24 18:21)
+  ✔ Swagger Documentation @done(25-02-24 19:38)
+
+
+Exchangerate-API (grátis)
+CurrencyLayer (plano gratuito limitado)
+Open Exchange Rates
+    
