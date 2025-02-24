@@ -5,6 +5,7 @@ Currency_API is a currency conversion API with transaction history, developed in
 - Go (Gin Framework)
 - SQLite
 - Swagger for API documentation
+- Unit Tests (main_test.go)
 
 ## 📖 How to Run Locally
 1. Clone the repository:
@@ -55,6 +56,14 @@ Currency_API is a currency conversion API with transaction history, developed in
     }
 }
 ```
+
+## 📢 Running Tests
+
+The project includes unit tests to ensure functionality.
+Run the tests with:
+  ```sh
+  go test ./...
+   ```
 
 ## 📢 Contributing
 Feel free to submit issues and pull requests!
