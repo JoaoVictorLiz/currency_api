@@ -69,6 +69,6 @@ Run the tests with:
 Feel free to submit issues and pull requests!
 
 ## 📣 Contact
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/joão-victor-liz-da-silveira-b347a71b5/)
+- LinkedIn: [My LinkedIn](https://www.linkedin.com/in/joão-victor-liz-da-silveira-b347a71b5/)
 - Email: joaovictorlizsilveira@gmail.com
 
